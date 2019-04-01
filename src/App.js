@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import 'bulma/css/bulma.css'
 class WeatherService extends Component {
   constructor() {
     super();
@@ -70,10 +70,12 @@ class App extends Component {
         {
           PLACES.map((place, index) => (
             <button key={index}
+            className={"button " + (index%2===0?"is-danger":"is-primary")}
               onClick={() => (
                 // onsole.log(`Button ${index} clicked!!! `)
                 this.setState({ activePlace: index })
-              )}>
+               )}> 
+                {/* class ="button is-primary"  */}
               {place.name}
             </button>
           ))}
